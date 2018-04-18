@@ -28,9 +28,9 @@ export class AppComponent {
       icon: icon({
         iconUrl: 'assets/marker-icon.png'
       })
-    })
+    });
 
-    map.setView(coords, 15)
-    this.markers.push(intialMarker)
+    map.setView(coords, 15);
+    this.markers.push(intialMarker);
   }
 }

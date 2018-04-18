@@ -1,1 +1,6 @@
-<section class="map" leaflet  [leafletOptions]="options"></section>
+<section
+  class="map" leaflet
+  [leafletOptions]="options"
+  [leafletLayers]="markers"
+  [leafletBaseLayers]="baseLayers"
+  (leafletMapReady)="onMapReady($event)"></section>

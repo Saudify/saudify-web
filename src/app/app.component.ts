@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { latLng, tileLayer, marker, icon } from 'leaflet';
+import { latLng, tileLayer, marker, icon, Map, Layer } from 'leaflet';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +7,30 @@ import { latLng, tileLayer, marker, icon } from 'leaflet';
   styleUrls: []
 })
 export class AppComponent {
+  public baseLayers: Object = {
+    'Open Street Map': tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: 'Open Street Map'
+    })
+  };
 
-  googleMaps = tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-    maxZoom: 20,
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-    detectRetina: true
-  });
-
-  rather = marker([-9.650237, -35.7054677], {
-    // icon: icon({
-    //   // iconSize: [25,41],
-
-    // })
-  });
-
-  options = {
-    layers: [ this.googleMaps, this.rather ],
+  public options: Object = {
     zoom: 15,
     center: latLng(-9.6456181, -35.7046923)
-};
+  };
+
+  public markers: Layer[] = [];
+
+  onMapReady(map: Map): void {
+    // TODO: Get current user coordinates
+    const coords = latLng([-9.650237, -35.7054677]);
+    const intialMarker: Layer = marker(coords, {
+      icon: icon({
+        iconUrl: 'assets/marker-icon.png'
+      })
+    })
+
+    map.setView(coords, 15)
+    this.markers.push(intialMarker)
+  }
 }

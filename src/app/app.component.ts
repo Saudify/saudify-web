@@ -15,22 +15,31 @@ export class AppComponent {
   };
 
   public options: Object = {
-    zoom: 15,
-    center: latLng(-9.6456181, -35.7046923)
+    zoom: 15
   };
 
   public markers: Layer[] = [];
 
   onMapReady(map: Map): void {
-    // TODO: Get current user coordinates
-    const coords = latLng([-9.650237, -35.7054677]);
-    const intialMarker: Layer = marker(coords, {
-      icon: icon({
-        iconUrl: 'assets/marker-icon.png'
-      })
-    });
+    // TODO: Put this code into
+    // a separated function
+    navigator
+      .geolocation
+      .getCurrentPosition(
+        pos => {
+          const { latitude, longitude } = pos.coords;
+          const coords = latLng([latitude, longitude]);
+          const intialMarker: Layer = marker(coords, {
+            icon: icon({
+              iconUrl: 'assets/marker-icon.png'
+            })
+          });
 
-    map.setView(coords, 15);
-    this.markers.push(intialMarker);
+          map.setView(coords, 15);
+          this.markers.push(intialMarker);
+        },
+        err => console.log(err) // TODO: show error message
+      );
+
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { latLng, tileLayer, marker, icon, Map, Layer } from 'leaflet';
-import { currentLocation } from '../lib/geolocation';
+import { tileLayer, Map, Layer, Point, Marker, LatLng } from 'leaflet';
+import { currentLocation, createMarker } from '../lib/geolocation';
 
 @Component({
   selector: 'app-root',
@@ -23,15 +23,11 @@ export class AppComponent {
 
   async onMapReady(map: Map): Promise<void> {
     // TODO: handle and show message on error
-    const { latitude, longitude } = await currentLocation(navigator.geolocation);
-    const coords = latLng([latitude, longitude]);
-    const intialMarker: Layer = marker(coords, {
-      icon: icon({
-        iconUrl: 'assets/marker-icon.png'
-      })
-    });
+    const currentPoint: Point = await currentLocation(navigator.geolocation);
+    const initialMarker: Marker = createMarker(currentPoint);
+    const coords: LatLng = initialMarker.getLatLng();
 
     map.setView(coords, 15);
-    this.markers.push(intialMarker);
+    this.markers.push(initialMarker);
   }
 }

@@ -15,10 +15,6 @@ export class AppComponent {
     })
   };
 
-  public options: Object = {
-    zoom: 15
-  };
-
   public markers: Layer[] = [];
 
   async onMapReady(map: Map): Promise<void> {

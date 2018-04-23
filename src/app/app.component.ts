@@ -23,7 +23,7 @@ export class AppComponent {
 
   async onMapReady(map: Map): Promise<void> {
     // TODO: handle and show message on error
-    const { latitude, longitude } = await currentLocation();
+    const { latitude, longitude } = await currentLocation(navigator.geolocation);
     const coords = latLng([latitude, longitude]);
     const intialMarker: Layer = marker(coords, {
       icon: icon({

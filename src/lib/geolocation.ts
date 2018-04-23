@@ -1,16 +1,18 @@
+import Point from './point'
+
 /**
  * Get the current user location.
- * @returns {Promise<Object>}
+ * @returns {Promise<Point>}
  */
-export function currentLocation(): Promise<any> {
+export function currentLocation(geolocation: any): Promise<Point> {
   return new Promise((resolve, reject) => {
-    navigator
-      .geolocation
+    geolocation
       .getCurrentPosition(
-        ({ coords }) => resolve({
-          latitude: coords.latitude,
-          longitude: coords.longitude
-        }),
+        ({ coords }) => {
+          const point = new Point(
+            coords.latitude, coords.longitude)
+          resolve(point)
+        },
         err => reject(err)
       );
   });

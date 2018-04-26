@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { tileLayer, Map, Layer, Point, Marker, LatLng } from 'leaflet';
+
 import { currentLocation, createMarker } from '../lib/geolocation';
+import { FeatureCollectionService } from './feature-collection/feature-collection.service';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,9 @@ export class AppComponent {
   };
 
   public markers: Layer[] = [];
+
+  constructor(
+    private featureCollection: FeatureCollectionService) { }
 
   async onMapReady(map: Map): Promise<void> {
     // TODO: handle and show message on error

@@ -5,6 +5,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { AppComponent } from './app.component';
 import { FeatureCollectionModule } from './feature-collection/feature-collection.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FeatureCollectionModule } from './feature-collection/feature-collection
     BrowserModule,
     HttpClientModule,
     LeafletModule.forRoot(),
+    SharedModule,
     FeatureCollectionModule
   ],
   providers: [],

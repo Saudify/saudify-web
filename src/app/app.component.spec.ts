@@ -1,14 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { FeatureCollectionModule } from './feature-collection/feature-collection.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        HttpClientModule,
         LeafletModule.forRoot(),
+        SharedModule,
         FeatureCollectionModule
       ],
       declarations: [

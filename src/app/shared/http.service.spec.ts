@@ -7,7 +7,7 @@ describe('HttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientModule,
+        HttpClientModule
       ],
       providers: [
         HttpClient,
@@ -23,8 +23,13 @@ describe('HttpService', () => {
   });
 
   describe('get', () => {
-    it('should call get request with no querystring params', inject([HttpService], (service: HttpService) => {
-      service.get();
-    }));
+    it('should call get request without querystring params', () => {
+      const httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+      httpClientSpy.get.and.returnValue({ map: () => { } });
+      const service: HttpService = new HttpService(httpClientSpy);
+      service.get('foo');
+      expect(httpClientSpy.get).toHaveBeenCalled();
+      expect(httpClientSpy.get).toHaveBeenCalledWith('https://localhost:3000/v1/foo', { params: {} });
+    });
   });
 });

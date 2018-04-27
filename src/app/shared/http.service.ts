@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import 'rxjs/add/operator/map';
+
 @Injectable()
 export class HttpService {
-  private baseUrl: String = 'https://localhost:3000/v1/';
+  /**
+   * Base api url.
+   */
+  private baseUrl = 'https://localhost:3000/v1/';
 
   constructor(private http: HttpClient) { }
 
@@ -12,11 +17,17 @@ export class HttpService {
    * @param uri Request uri.
    * @returns Full request url.
    */
-  private getUrl(uri: String): String {
-    return `${this.baseUrl}${uri}`
+  private getUrl(uri: string): string {
+    return `${this.baseUrl}${uri}`;
   }
 
-  get() {
-    return [];
+  get(uri: string) {
+    const url: string = this.getUrl(uri);
+    return this
+      .http
+      .get(url, {
+        params: {}
+      })
+      .map((res: Response) => res.json());
   }
 }

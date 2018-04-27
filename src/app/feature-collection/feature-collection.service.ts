@@ -8,6 +8,6 @@ export class FeatureCollectionService {
   constructor(private httpService: HttpService) { }
 
   fetchAll() {
-    return this.httpService.get();
+    return this.httpService.get('feature-collections');
   }
 }

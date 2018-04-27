@@ -27,9 +27,23 @@ describe('HttpService', () => {
       const httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
       httpClientSpy.get.and.returnValue({ map: () => { } });
       const service: HttpService = new HttpService(httpClientSpy);
+
       service.get('foo');
+
       expect(httpClientSpy.get).toHaveBeenCalled();
       expect(httpClientSpy.get).toHaveBeenCalledWith('https://localhost:3000/v1/foo', { params: {} });
+    });
+
+    it('should call get request with querystring', () => {
+      const httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+      httpClientSpy.get.and.returnValue({ map: () => { } });
+      const service: HttpService = new HttpService(httpClientSpy);
+      const params = { lat: 30, lng: -105 };
+
+      service.get('foo', params);
+
+      expect(httpClientSpy.get).toHaveBeenCalled();
+      expect(httpClientSpy.get.calls.argsFor(0)[1].params.toString()).toEqual('lat=30&lng=-105');
     });
   });
 });

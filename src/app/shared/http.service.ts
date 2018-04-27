@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HttpService {
   /**
    * Base api url.
+   * TODO: put in config file
    */
   private baseUrl = 'https://localhost:3000/v1/';
 
@@ -14,20 +15,26 @@ export class HttpService {
 
   /**
    * Mount request url.
-   * @param uri Request uri.
+   * @param path Request path.
    * @returns Full request url.
    */
-  private getUrl(uri: string): string {
-    return `${this.baseUrl}${uri}`;
+  private getUrl(path: string): string {
+    return `${this.baseUrl}${path}`;
   }
 
-  get(uri: string) {
-    const url: string = this.getUrl(uri);
+  /**
+   * Execute GET request.
+   * @param path Url path.
+   * @param qs Querystring.
+   * @returns Response JSON.
+   */
+  get(path: string, qs: any = null): Observable<any> {
+    const url: string = this.getUrl(path);
+    const params = (qs !== null) ? new HttpParams({ fromObject: qs }) : {};
+
     return this
       .http
-      .get(url, {
-        params: {}
-      })
+      .get(url, { params })
       .map((res: Response) => res.json());
   }
 }

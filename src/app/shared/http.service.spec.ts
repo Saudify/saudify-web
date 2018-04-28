@@ -3,6 +3,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { HttpService } from './http.service';
 
+const setupHttpSpy = () => {
+  const spy = jasmine.createSpyObj('HttpClient', ['get']);
+  spy.get.and.returnValue({ map: () => { } });
+  return spy;
+};
+
 describe('HttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -23,9 +29,15 @@ describe('HttpService', () => {
   });
 
   describe('get', () => {
+    let httpClientSpy;
+
+    beforeAll(() => {
+      httpClientSpy = setupHttpSpy();
+    });
+
+    afterEach(() => httpClientSpy.get.calls.reset());
+
     it('should call get request without querystring params', () => {
-      const httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-      httpClientSpy.get.and.returnValue({ map: () => { } });
       const service: HttpService = new HttpService(httpClientSpy);
 
       service.get('foo');
@@ -35,8 +47,6 @@ describe('HttpService', () => {
     });
 
     it('should call get request with querystring', () => {
-      const httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-      httpClientSpy.get.and.returnValue({ map: () => { } });
       const service: HttpService = new HttpService(httpClientSpy);
       const params = { lat: 30, lng: -105 };
 

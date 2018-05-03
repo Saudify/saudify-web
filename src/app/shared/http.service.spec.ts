@@ -43,7 +43,8 @@ describe('HttpService', () => {
       service.get('foo');
 
       expect(httpClientSpy.get).toHaveBeenCalled();
-      expect(httpClientSpy.get).toHaveBeenCalledWith('https://localhost:3000/v1/foo', { params: {} });
+      // TODO: put in config file
+      expect(httpClientSpy.get).toHaveBeenCalledWith('http://localhost:3000/v1/foo', { params: {} });
     });
 
     it('should call get request with querystring', () => {

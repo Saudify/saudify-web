@@ -9,7 +9,7 @@ export class HttpService {
    * Base api url.
    * TODO: put in config file
    */
-  private baseUrl = 'https://localhost:3000/v1/';
+  private baseUrl = 'http://localhost:3000/v1/';
 
   constructor(private http: HttpClient) { }
 

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { LatLng } from 'leaflet';
 
 import { HttpService } from './../shared/http.service';
 
@@ -7,7 +9,10 @@ export class FeatureCollectionService {
 
   constructor(private httpService: HttpService) { }
 
-  fetchAll() {
-    return this.httpService.get('feature-collections');
+  fetchAll(coords: LatLng): Observable<any> {
+    return this.httpService.get('feature-collections', {
+      lat: coords.lat,
+      lng: coords.lng
+    });
   }
 }

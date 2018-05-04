@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HttpService {
@@ -31,10 +30,6 @@ export class HttpService {
   get(path: string, qs: any = null): Observable<any> {
     const url: string = this.getUrl(path);
     const params = (qs !== null) ? new HttpParams({ fromObject: qs }) : {};
-
-    return this
-      .http
-      .get(url, { params })
-      .map((res: Response) => res.json());
+    return this.http.get(url, { params });
   }
 }

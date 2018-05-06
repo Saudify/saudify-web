@@ -28,6 +28,19 @@ export class AppComponent {
     const initialMarker: Marker = createMarker(currentPoint);
     const coords: LatLng = initialMarker.getLatLng();
 
+    this.featureCollection
+      .fetchAll(coords)
+      .subscribe(res => {
+        const { data } = res;
+
+        data.forEach(point => {
+          const [ lng, lat ] = point.geometry.coordinates;
+          const pointInstance = new Point(lng, lat);
+          const markerToAdd = createMarker(pointInstance);
+          this.markers.push(markerToAdd);
+        });
+      });
+
     map.setView(coords, 15);
     this.markers.push(initialMarker);
   }

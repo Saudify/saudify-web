@@ -22,26 +22,34 @@ export class AppComponent {
   constructor(
     private featureCollection: FeatureCollectionService) { }
 
-  async onMapReady(map: Map): Promise<void> {
-    // TODO: handle and show message on error
+  async onMapReady(map: Map) {
+    // TODO: handle and show message on error when getting user location
     const currentPoint: Point = await currentLocation(navigator.geolocation);
     const initialMarker: Marker = createMarker(currentPoint);
-    const coords: LatLng = initialMarker.getLatLng();
+    this.centerMap(map, initialMarker);
+    this.fetchFeatureCollections(initialMarker);
+  }
 
-    this.featureCollection
-      .fetchAll(coords)
-      .subscribe(res => {
-        const { data } = res;
+  private centerMap(map: Map, marker: Marker): void {
+    map.setView(marker.getLatLng(), 15);
+    this.markers.push(marker);
+  }
 
-        data.forEach(point => {
-          const [ lng, lat ] = point.geometry.coordinates;
-          const pointInstance = new Point(lng, lat);
-          const markerToAdd = createMarker(pointInstance);
-          this.markers.push(markerToAdd);
-        });
+  private fetchFeatureCollections(marker: Marker): void {
+    this
+      .featureCollection
+      .fetchAll(marker.getLatLng())
+      .subscribe(this.successFetch.bind(this), /** TODO: handle error */);
+  }
+
+  private successFetch(res: any): void {
+    res
+      .data
+      .forEach(point => {
+        const [lng, lat] = point.geometry.coordinates;
+        const pointInstance = new Point(lng, lat);
+        const markerToAdd = createMarker(pointInstance);
+        this.markers.push(markerToAdd);
       });
-
-    map.setView(coords, 15);
-    this.markers.push(initialMarker);
   }
 }

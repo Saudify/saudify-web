@@ -1,11 +1,12 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateTo(): AppPage {
+    browser.get('/');
+    return this;
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getMapElement(): ElementFinder {
+    return element(by.css('section.map'));
   }
 }

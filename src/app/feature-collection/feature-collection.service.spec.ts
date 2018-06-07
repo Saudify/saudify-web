@@ -5,6 +5,7 @@ import { latLng } from 'leaflet';
 import { HttpService } from './../shared/http.service';
 import { FeatureCollectionService } from './feature-collection.service';
 import { SharedModule } from '../shared/shared.module';
+import { environment } from '../../environments/environment';
 
 describe('FeatureCollectionService', () => {
   let httpClientSpy: { get: jasmine.Spy };
@@ -25,8 +26,7 @@ describe('FeatureCollectionService', () => {
       service
         .fetchAll(coords)
         .subscribe(result => {
-          // TODO: put base url in config
-          expect(httpClientSpy.get.calls.argsFor(0)[0]).toEqual('http://localhost:3000/v1/feature-collections');
+          expect(httpClientSpy.get.calls.argsFor(0)[0]).toEqual(`${environment.apiUrl}feature-collections`);
           expect(httpClientSpy.get.calls.argsFor(0)[1].params.toString()).toEqual('lat=-9.66451&lng=-35.69613');
           done();
         }, err => { /** nothing */ });

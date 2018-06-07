@@ -2,6 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { HttpService } from './http.service';
+import { environment } from '../../environments/environment';
 
 const setupHttpSpy = () => {
   const spy = jasmine.createSpyObj('HttpClient', ['get']);
@@ -43,8 +44,7 @@ describe('HttpService', () => {
       service.get('foo');
 
       expect(httpClientSpy.get).toHaveBeenCalled();
-      // TODO: put in config file
-      expect(httpClientSpy.get).toHaveBeenCalledWith('http://localhost:3000/v1/foo', { params: {} });
+      expect(httpClientSpy.get).toHaveBeenCalledWith(`${environment.apiUrl}foo`, { params: {} });
     });
 
     it('should call get request with querystring', () => {

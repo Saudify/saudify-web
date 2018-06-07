@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class HttpService {
-  /**
-   * Base api url.
-   * TODO: put in config file
-   */
-  private baseUrl = 'http://localhost:3000/v1/';
+
+  private baseUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

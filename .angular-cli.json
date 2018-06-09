@@ -10,6 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
+        "manifest.json",
         {
           "glob": "**/*",
           "input": "../node_modules/leaflet/dist/images",
@@ -32,7 +33,8 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "serviceWorker": true
     }
   ],
   "e2e": {

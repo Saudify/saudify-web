@@ -3,12 +3,19 @@ import { currentLocation, createMarker } from './';
 
 describe('Geolocation', () => {
   describe('createMarker', () => {
-    it('should return a Marker instance', () => {
+    it('should create marker with default icon path', () => {
       const point = new Point(-105, 30);
       const m = createMarker(point);
       expect(m).toBeTruthy(m instanceof Point);
-      expect(m.getLatLng().lat).toEqual(point.y);
-      expect(m.getLatLng().lng).toEqual(point.x);
+      expect(m.options.icon.options.iconUrl).toEqual('assets/marker-icon.png');
+    });
+
+    it('should create marker with icon path receive in argument', () => {
+      const iconPath = 'assets/marker.png';
+      const point = new Point(-105, 30);
+      const m = createMarker(point, iconPath);
+      expect(m).toBeTruthy(m instanceof Point);
+      expect(m.options.icon.options.iconUrl).toEqual(iconPath);
     });
   });
 

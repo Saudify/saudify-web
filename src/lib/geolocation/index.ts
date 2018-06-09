@@ -21,6 +21,7 @@ export function currentLocation(geolocation: any): Promise<Point> {
 /**
  * Create a new marker.
  * @param point Point
+ * @param iconUrl String
  * @returns {Marker}
  */
 export function createMarker(point: Point, iconUrl: string = null): Marker {

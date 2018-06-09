@@ -9,8 +9,8 @@
       "urls": [
         "/saudify-web/favicon.ico",
         "/saudify-web/index.html",
-        "/saudify-web/inline.c642fd19fb8c48638155.bundle.js",
-        "/saudify-web/main.3bc0584de2d15c16ace2.bundle.js",
+        "/saudify-web/inline.ffbe8979fe0eb8269625.bundle.js",
+        "/saudify-web/main.3bfcbe095e4403fd7d59.bundle.js",
         "/saudify-web/polyfills.4525a1efb8045a6cdc51.bundle.js",
         "/saudify-web/styles.f7bb9bf8bc007ee3c9bb.bundle.css"
       ],
@@ -94,9 +94,9 @@
     "/saudify-web/assets/marker-shadow.png": "7b6a8df63930381e96604e705168d0527d6b82bc",
     "/saudify-web/assets/marker.png": "1594b5046fd5e278c327babaeaa7ab563a7d58c8",
     "/saudify-web/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/saudify-web/index.html": "4ead89e03184f1b2780890711ffa1181d9d59623",
-    "/saudify-web/inline.c642fd19fb8c48638155.bundle.js": "70bc175d8cd9fa7198b35bb1cbec2aa621e4ab6e",
-    "/saudify-web/main.3bc0584de2d15c16ace2.bundle.js": "7f5e432a7a966fb42fec58b6cca199f19dac8679",
+    "/saudify-web/index.html": "7fb5b417b4296c767ead3c905b9b06fc5dbeca39",
+    "/saudify-web/inline.ffbe8979fe0eb8269625.bundle.js": "901833da55df2281a1cb67274b4aa9df3be25e1f",
+    "/saudify-web/main.3bfcbe095e4403fd7d59.bundle.js": "10cadf1452e63ad8af416facf66ae28adf68572c",
     "/saudify-web/polyfills.4525a1efb8045a6cdc51.bundle.js": "7fbacc439753c009b61f916763335172a0ac484c",
     "/saudify-web/styles.f7bb9bf8bc007ee3c9bb.bundle.css": "0f753469d343977cfe83029f42b2cbc25e5fe971"
   },

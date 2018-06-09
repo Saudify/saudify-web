@@ -8,7 +8,9 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-gh-pages": "ng build --prod --base-href \"/saudify-web/\"",
+    "deploy-gh-pages": "node_modules/.bin/ngh"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@angular/router": "^5.2.11",
     "@angular/service-worker": "^6.0.4",
     "@asymmetrik/ngx-leaflet": "^3.0.2",
+    "angular-cli-ghpages": "^0.5.2",
     "core-js": "^2.5.7",
     "leaflet": "^1.3.1",
     "rxjs": "^5.5.11",

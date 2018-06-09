@@ -11,7 +11,7 @@ import { FeatureCollectionService } from './feature-collection/feature-collectio
 })
 export class AppComponent {
   public baseLayers: Object = {
-    'Open Street Map': tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    'Open Street Map': tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: 'Open Street Map'
     })

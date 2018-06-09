@@ -1,0 +1,121 @@
+{
+  "configVersion": 1,
+  "index": "/saudify-web/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/saudify-web/favicon.ico",
+        "/saudify-web/index.html",
+        "/saudify-web/inline.c642fd19fb8c48638155.bundle.js",
+        "/saudify-web/main.3bc0584de2d15c16ace2.bundle.js",
+        "/saudify-web/polyfills.4525a1efb8045a6cdc51.bundle.js",
+        "/saudify-web/styles.f7bb9bf8bc007ee3c9bb.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/saudify-web/assets/icons/android-icon-144x144.png",
+        "/saudify-web/assets/icons/android-icon-192x192.png",
+        "/saudify-web/assets/icons/android-icon-36x36.png",
+        "/saudify-web/assets/icons/android-icon-48x48.png",
+        "/saudify-web/assets/icons/android-icon-72x72.png",
+        "/saudify-web/assets/icons/android-icon-96x96.png",
+        "/saudify-web/assets/icons/apple-icon-114x114.png",
+        "/saudify-web/assets/icons/apple-icon-120x120.png",
+        "/saudify-web/assets/icons/apple-icon-144x144.png",
+        "/saudify-web/assets/icons/apple-icon-152x152.png",
+        "/saudify-web/assets/icons/apple-icon-180x180.png",
+        "/saudify-web/assets/icons/apple-icon-57x57.png",
+        "/saudify-web/assets/icons/apple-icon-60x60.png",
+        "/saudify-web/assets/icons/apple-icon-72x72.png",
+        "/saudify-web/assets/icons/apple-icon-76x76.png",
+        "/saudify-web/assets/icons/apple-icon-precomposed.png",
+        "/saudify-web/assets/icons/apple-icon.png",
+        "/saudify-web/assets/icons/browserconfig.xml",
+        "/saudify-web/assets/icons/favicon-16x16.png",
+        "/saudify-web/assets/icons/favicon-32x32.png",
+        "/saudify-web/assets/icons/favicon-96x96.png",
+        "/saudify-web/assets/icons/favicon.ico",
+        "/saudify-web/assets/icons/manifest.json",
+        "/saudify-web/assets/icons/ms-icon-144x144.png",
+        "/saudify-web/assets/icons/ms-icon-150x150.png",
+        "/saudify-web/assets/icons/ms-icon-310x310.png",
+        "/saudify-web/assets/icons/ms-icon-70x70.png",
+        "/saudify-web/assets/layers-2x.png",
+        "/saudify-web/assets/layers.png",
+        "/saudify-web/assets/marker-icon-2x.png",
+        "/saudify-web/assets/marker-icon.png",
+        "/saudify-web/assets/marker-shadow.png",
+        "/saudify-web/assets/marker.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/saudify-web/assets/icons/android-icon-144x144.png": "c902c4fe4fda78aae587c1ddf28472cca4aeb108",
+    "/saudify-web/assets/icons/android-icon-192x192.png": "d4e28c05e52039fefb9b4ea10452565e90416f21",
+    "/saudify-web/assets/icons/android-icon-36x36.png": "8190757c3943fb69c85f2aad86140dffcae74c06",
+    "/saudify-web/assets/icons/android-icon-48x48.png": "082360ce9554656ce32ff6606f2c072c80a3587a",
+    "/saudify-web/assets/icons/android-icon-72x72.png": "56ba12486917ee9806669b7c74d7be8da6ea90a9",
+    "/saudify-web/assets/icons/android-icon-96x96.png": "21197098cf1bbc3b73fa04aa555eae6a53f77748",
+    "/saudify-web/assets/icons/apple-icon-114x114.png": "92c084a6e5e06649f58531383673444a7acc7bc7",
+    "/saudify-web/assets/icons/apple-icon-120x120.png": "bdc5942ce072ba8ceb6ce43fbd636fa92a6eb674",
+    "/saudify-web/assets/icons/apple-icon-144x144.png": "c902c4fe4fda78aae587c1ddf28472cca4aeb108",
+    "/saudify-web/assets/icons/apple-icon-152x152.png": "7eac4b8e63c9500b6ddaad0926e9da132e358dbd",
+    "/saudify-web/assets/icons/apple-icon-180x180.png": "75ccbb762da33e9cab69f2d148695b8070476087",
+    "/saudify-web/assets/icons/apple-icon-57x57.png": "b9f3e15da23eeb788e7533ca379367104e7455ed",
+    "/saudify-web/assets/icons/apple-icon-60x60.png": "f0bca815b93a2eed5fb97b470d3ef1b58b2a0135",
+    "/saudify-web/assets/icons/apple-icon-72x72.png": "56ba12486917ee9806669b7c74d7be8da6ea90a9",
+    "/saudify-web/assets/icons/apple-icon-76x76.png": "e79763fdcaf9b115d75064ffc75e7273fd25be94",
+    "/saudify-web/assets/icons/apple-icon-precomposed.png": "c0efee6a999806bb124dc9ea0e0ced36e9e6e61e",
+    "/saudify-web/assets/icons/apple-icon.png": "c0efee6a999806bb124dc9ea0e0ced36e9e6e61e",
+    "/saudify-web/assets/icons/browserconfig.xml": "853389b6c4273965899eb1302d665eb91395fd0c",
+    "/saudify-web/assets/icons/favicon-16x16.png": "ebb121a95e424aa4961f3db476c0a464fc45334e",
+    "/saudify-web/assets/icons/favicon-32x32.png": "d67694a7680374cd49010773c07909d93171720b",
+    "/saudify-web/assets/icons/favicon-96x96.png": "21197098cf1bbc3b73fa04aa555eae6a53f77748",
+    "/saudify-web/assets/icons/favicon.ico": "9052059cea6f77de1dc36092e295708600d8066d",
+    "/saudify-web/assets/icons/manifest.json": "d11febf9e708a9e11baee37ed7dc5e99902580be",
+    "/saudify-web/assets/icons/ms-icon-144x144.png": "c902c4fe4fda78aae587c1ddf28472cca4aeb108",
+    "/saudify-web/assets/icons/ms-icon-150x150.png": "5ce23439f8bcab3fdb9a0b226bf6d068ec8f71cc",
+    "/saudify-web/assets/icons/ms-icon-310x310.png": "c6888ddcb5713dd545d59bdffc746850dc691212",
+    "/saudify-web/assets/icons/ms-icon-70x70.png": "6976353806b04932d61f08d7aae7e4619f053ef0",
+    "/saudify-web/assets/layers-2x.png": "152a162333e46d24f9d89f566312fc0c64011dee",
+    "/saudify-web/assets/layers.png": "c9e7528e491a39232ba24a2706c6c739d6fb0f06",
+    "/saudify-web/assets/marker-icon-2x.png": "cf3a536596b1f58e0ac805404183c8e6d6bdacb5",
+    "/saudify-web/assets/marker-icon.png": "60a90bcbb2b42b7ddb4556db94eb7c1084b0e5da",
+    "/saudify-web/assets/marker-shadow.png": "7b6a8df63930381e96604e705168d0527d6b82bc",
+    "/saudify-web/assets/marker.png": "1594b5046fd5e278c327babaeaa7ab563a7d58c8",
+    "/saudify-web/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/saudify-web/index.html": "4ead89e03184f1b2780890711ffa1181d9d59623",
+    "/saudify-web/inline.c642fd19fb8c48638155.bundle.js": "70bc175d8cd9fa7198b35bb1cbec2aa621e4ab6e",
+    "/saudify-web/main.3bc0584de2d15c16ace2.bundle.js": "7f5e432a7a966fb42fec58b6cca199f19dac8679",
+    "/saudify-web/polyfills.4525a1efb8045a6cdc51.bundle.js": "7fbacc439753c009b61f916763335172a0ac484c",
+    "/saudify-web/styles.f7bb9bf8bc007ee3c9bb.bundle.css": "0f753469d343977cfe83029f42b2cbc25e5fe971"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}

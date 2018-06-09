@@ -23,12 +23,12 @@ export function currentLocation(geolocation: any): Promise<Point> {
  * @param point Point
  * @returns {Marker}
  */
-export function createMarker(point: Point): Marker {
+export function createMarker(point: Point, iconUrl: string = null): Marker {
   const { y, x } = point;
   const coords = latLng([y, x]);
   return marker(coords, {
     icon: icon({
-      iconUrl: 'assets/marker-icon.png'
+      iconUrl: iconUrl || 'assets/marker-icon.png'
     })
   });
 }

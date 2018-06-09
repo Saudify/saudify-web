@@ -43,12 +43,14 @@ export class AppComponent {
   }
 
   private successFetch(res: any): void {
+    const saudifyMarker = 'assets/marker.png';
+
     res
       .data
       .forEach(point => {
         const [lng, lat] = point.geometry.coordinates;
         const pointInstance = new Point(lng, lat);
-        const markerToAdd = createMarker(pointInstance);
+        const markerToAdd = createMarker(pointInstance, saudifyMarker);
         this.markers.push(markerToAdd);
       });
   }
